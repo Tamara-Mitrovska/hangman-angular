@@ -1,0 +1,87 @@
+.man {
+    --color: #3595fc;
+    --brown: #7d2502;
+    --left-border-length: 1rem;
+    --right-border-length: 15rem;
+    --border-size: 0.5rem;
+    --head-height: 3rem;
+    --arms-height: 3rem;
+    --legs-height: 3rem;
+    width: 7rem;
+    height: var(--right-border-length);
+    border-right: var(--border-size) solid var(--brown);
+    border-top: var(--border-size) solid var(--brown);
+    border-left: var(--border-size) solid var(--brown);
+    position: relative;
+
+    &:after {
+        content: ' ';
+        position: absolute;
+        top: var(--left-border-length);
+        left: calc(-1 * var(--border-size));
+        background-color: var(--background-color);
+        width: var(--border-size);
+        height: calc(var(--right-border-length) - var(--left-border-length));
+    }
+
+    &__head {
+        z-index: 1;
+        position: absolute;
+        top: var(--left-border-length);
+        left: calc(-1 * var(--head-height) / 2 - var(--border-size) / 2);
+        width: var(--head-height);
+        height: var(--head-height);
+        background-color: var(--man-color);
+        border-radius: 50%;
+    }
+
+    &__body {
+        z-index: 1;
+        position: absolute;
+        top: calc(var(--left-border-length) + var(--head-height));
+        left: calc(-1 * var(--head-height) / 4 - var(--border-size) / 2);
+        height: calc(var(--arms-height) + var(--legs-height));
+        width: calc(var(--head-height) / 2);
+        background-color: var(--man-color);
+        border-radius: 30%;
+    }
+
+    &__arms {
+        z-index: 1;
+        position: absolute;
+        top: calc(var(--left-border-length) + var(--head-height) - var(--arms-height) / 2);
+        left: calc(-1 * var(--arms-height) / 2 - var(--border-size));
+        height: var(--arms-height);
+        width: var(--arms-height);
+        transform-origin: center;
+        transform: rotate(45deg);
+
+        &--left {
+            border-bottom: var(--border-size) solid var(--man-color);
+        }
+
+        &--right {
+            border-right: var(--border-size) solid var(--man-color);
+        }
+    }
+
+    &__legs {
+        z-index: 1;
+        position: absolute;
+        top: calc(var(--left-border-length) + var(--head-height) + var(--arms-height) + 3 * var(--legs-height) / 4);
+        left: calc(-1 * var(--arms-height) / 2 - var(--border-size));
+        height: var(--arms-height);
+        width: var(--arms-height);
+        transform-origin: center;
+        transform: rotate(45deg);
+
+        &--left {
+            border-left: var(--border-size) solid var(--man-color);
+        }
+
+        &--right {
+            border-top: var(--border-size) solid var(--man-color);
+        }
+    }
+
+}
