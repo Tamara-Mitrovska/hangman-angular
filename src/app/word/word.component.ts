@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./word.component.scss']
 })
 export class WordComponent {
+  expectedWord = 'coding';
+  guess = ['C', '_', 'D', '_', 'I', '_'];
 
+  
 }

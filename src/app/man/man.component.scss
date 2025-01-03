@@ -1,6 +1,4 @@
 .man {
-    --color: #3595fc;
-    --brown: #7d2502;
     --left-border-length: 1rem;
     --right-border-length: 15rem;
     --border-size: 0.5rem;
@@ -9,9 +7,9 @@
     --legs-height: 3rem;
     width: 7rem;
     height: var(--right-border-length);
-    border-right: var(--border-size) solid var(--brown);
-    border-top: var(--border-size) solid var(--brown);
-    border-left: var(--border-size) solid var(--brown);
+    border-right: var(--border-size) solid var(--wood-color);
+    border-top: var(--border-size) solid var(--wood-color);
+    border-left: var(--border-size) solid var(--wood-color);
     position: relative;
 
     &:after {
