@@ -1,0 +1,44 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25rem;
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.25rem;
+
+    }
+
+    &__key {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        border-radius: 5px;
+        box-shadow: 2px 2px black;
+        width: 8vw;
+        aspect-ratio: 1 / 1;
+        text-transform: uppercase;
+        color: white;
+        background-color: grey;
+        font-weight: 800;
+
+        &:hover {
+            background-color: #8f8f8f;
+            cursor: pointer;
+        }
+
+        &--wrong {
+            background-color: #9e444a;
+        }
+
+        &--correct {
+            background-color: #62b571;
+        }
+    }
+}
