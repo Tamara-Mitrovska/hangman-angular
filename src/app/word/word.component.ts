@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WordService } from './word.service';
 
 @Component({
   selector: 'app-word',
@@ -6,8 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./word.component.scss']
 })
 export class WordComponent {
-  expectedWord = 'coding';
-  guess = ['C', '_', 'D', '_', 'I', '_'];
-
-  
+  constructor(public wordService: WordService) {}
 }

@@ -1,5 +1,5 @@
 <div class="word">
-    <div class="word__letter" *ngFor="let char of guess">
+    <div class="word__letter" *ngFor="let char of wordService.guess">
         {{char === '_' ? '' : char}}
     </div>
 </div>

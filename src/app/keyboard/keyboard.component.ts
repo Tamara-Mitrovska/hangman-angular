@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WordService } from '../word/word.service';
 
 @Component({
   selector: 'app-keyboard',
@@ -11,4 +12,6 @@ export class KeyboardComponent {
     ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
     ['z', 'x', 'c', 'v', 'b', 'n', 'm']
   ]
+
+  constructor(public wordService: WordService) {}
 }

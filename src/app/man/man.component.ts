@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WordService } from '../word/word.service';
 
 @Component({
   selector: 'app-man',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./man.component.scss']
 })
 export class ManComponent {
-
+  constructor(public wordService: WordService) {}
 }
