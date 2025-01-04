@@ -1,4 +1,4 @@
-<div class="keyboard">
+<div class="keyboard" *ngIf="wordService.ongoing">
     <div class="keyboard__row" *ngFor="let row of keys; index as ri">
         <button class="keyboard__key" 
             [ngClass]="{

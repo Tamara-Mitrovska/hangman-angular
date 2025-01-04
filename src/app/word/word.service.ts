@@ -1,11 +1,26 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable({providedIn: 'root'})
 export class WordService {
 
-    private currentWord = 'coding';
+    private allWords: string[] = [];
+    private currentWord = 'a';
     wrongLetters = new Set();
-    guess = ['_', '_', '_', '_', '_', '_'];
+    guess = ['_'];
+
+    constructor(private http: HttpClient) {
+        this.http.get<string[]>('/assets/words.json').subscribe(words => {
+            this.allWords = words;
+            this.setNewWord();
+        });
+    }
+
+    setNewWord(): void {
+        this.currentWord = this.allWords[Math.floor(Math.random() * this.allWords.length)];
+        this.guess = [].constructor(this.currentWord.length).fill('_');
+        this.wrongLetters = new Set();
+    }
 
     checkLetter(letter: string): void {
         if (this.isLetterCorrect(letter) || this.isLetterWrong(letter)) {
@@ -27,6 +42,18 @@ export class WordService {
 
     isLetterWrong(letter: string): boolean {
         return this.wrongLetters.has(letter);
+    }
+
+    get ongoing(): boolean {
+        return !this.victory && !this.defeat;
+    }
+
+    get victory(): boolean {
+        return !this.guess.includes('_');
+    }
+
+    get defeat(): boolean {
+        return this.guess.includes('_') && this.wrongLetters.size === 6;
     }
 
 

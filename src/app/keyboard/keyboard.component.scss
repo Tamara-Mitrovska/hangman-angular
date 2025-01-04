@@ -22,20 +22,20 @@
         border-radius: 5px;
         box-shadow: 2px 2px black;
         width: 8vw;
+        max-width: 5em;
         aspect-ratio: 1 / 1;
         text-transform: uppercase;
         color: white;
         background-color: grey;
         font-weight: 800;
 
-        &:hover {
+        &:hover:not(.keyboard__key--wrong):not(.keyboard__key--correct) {
             background-color: #8f8f8f;
             cursor: pointer;
         }
 
         &--wrong {
             background-color: #9e444a;
-            
         }
 
         &--correct {
