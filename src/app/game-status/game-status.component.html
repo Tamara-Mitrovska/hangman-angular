@@ -1,8 +1,0 @@
-<div *ngIf="!wordService.ongoing" class="game-status">
-    <span>
-        {{wordService.victory ? 'You won!' : 'You lost :('}}
-    </span>
-    <button class="game-status__button" (click)="wordService.setNewWord()">
-        Play again
-    </button>
-</div>
